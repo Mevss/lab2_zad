@@ -48,4 +48,7 @@ function printUserGradeInfo(user) {
     console.log(`Imię i nazwisko: ${name} ${surname}`);
     console.log(`Średnia ważona: ${weightedAverage.toFixed(2)}`);
   }
-  printUserGradeInfo(user);
+printUserGradeInfo(user);
+
+const subjectWithWeightOne = _.find(user.allGrades, { weight: 1 });
+console.log('Przedmiot z wagą 1:', subjectWithWeightOne);
