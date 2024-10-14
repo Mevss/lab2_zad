@@ -54,7 +54,7 @@ const subjectWithWeightOne = _.find(user.allGrades, { weight: 1 });
 console.log('Przedmiot z wagą 1:', subjectWithWeightOne);
 
 function getMails(collections) {
-    const emailPattern = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/;
+    const emailPattern = /^\S+@\S+\.\S+$/;
 
     const emails = collections
         .filter(item => typeof item === 'string')
