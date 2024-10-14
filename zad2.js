@@ -51,5 +51,30 @@ function printUserGradeInfo(user) {
 printUserGradeInfo(user);
 
 const subjectWithWeightOne = _.find(user.allGrades, { weight: 1 });
-
 console.log('Przedmiot z wagą 1:', subjectWithWeightOne);
+
+function getMails(collections) {
+    const emailPattern = /\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b/;
+
+    const emails = collections
+        .filter(item => typeof item === 'string')
+        .filter(item => emailPattern.test(item))
+        .sort();
+
+    return emails;
+}
+
+const collections = [
+    {},
+    15,
+    "hello@test.pl",
+    null,
+    ['aaa', 'bbb', 5],
+    'admin@gmail.com',
+    undefined,
+    'a34@yahoo.com',
+    '321@a',
+    '321.pl'
+];
+
+console.log(getMails(collections));
